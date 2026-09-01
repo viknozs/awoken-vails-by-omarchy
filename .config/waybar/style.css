@@ -1,0 +1,157 @@
+@import "../omarchy/current/theme/waybar.css";
+
+window#waybar {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
+
+* {
+  background-color: @background;
+  color: @foreground;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: 'Sarasa Mono T';
+  font-weight: 200;
+  /* Schrift wieder groesser für bessere Lesbarkeit */
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+}
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+#workspaces button {
+  all: initial;
+  padding: 0 5px;
+  margin: 0 1.5px;
+  min-width: 9px;
+  color: #777777;
+}
+
+#workspaces button.active {
+  color: #ffffff;
+  font-weight: bold;
+  border-top: 2px solid #ff0055;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+#workspaces button.urgent {
+  color: #ff0055;
+}
+
+tooltip {
+  padding: 2px;
+}
+
+/* Linkes Layout */
+#custom-awoken {
+  margin-left: 4px;
+  margin-right: 24px;
+  color: #ff0055;
+}
+
+#custom-clock {
+  margin-left: 0px;
+}
+
+/* Mittleres Layout: VU-Meter & Audiosymbole links vom Pentagramm */
+#custom-vumeter {
+  margin-right: 6px;
+  font-family: monospace;
+  font-size: 11px;
+  color: #ff0055;
+  opacity: 0.85;
+}
+
+#pulseaudio {
+  min-width: 12px;
+  margin-right: 20px;
+}
+
+#custom-update {
+  font-size: 11px;
+  margin-right: 8px;
+}
+
+/* Umgekehrtes Pentagramm: Großes Icon mit 75px (~2 cm) Abstand links & rechts */
+#custom-omarchy {
+  /* Pentagramm etwas groesser als der Rest */
+  font-size: 16px;
+  /* Verhindert, dass das groessere Icon den Balken aufblaeht */
+  margin-top: -1px;
+  margin-bottom: -1px;
+  /* ca. 2 cm Abstand links */
+  margin-left: 75px;
+  /* ca. 2 cm Abstand rechts */
+  margin-right: 75px;
+  color: #ff0055;
+}
+
+/* System-Icons rechts vom Pentagramm */
+#tray {
+  margin-right: 14px;
+}
+
+#network {
+  margin-right: 15px;
+}
+
+#bluetooth {
+  margin-right: 18px;
+}
+
+#cpu {
+  min-width: 12px;
+  margin-right: 9px;
+}
+
+#battery {
+  min-width: 12px;
+}
+
+#custom-weather {
+  margin-left: 7.5px;
+  margin-right: 7.5px;
+}
+
+#custom-weather.unavailable {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#custom-screenrecording-indicator,
+#custom-idle-indicator,
+#custom-notification-silencing-indicator {
+  min-width: 12px;
+  margin-left: 5px;
+  margin-right: 0;
+  font-size: 11px;
+}
+
+#custom-screenrecording-indicator.active,
+#custom-idle-indicator.active,
+#custom-notification-silencing-indicator.active,
+#custom-voxtype.recording {
+  color: #a55555;
+}
+
+#custom-voxtype {
+  min-width: 12px;
+  margin: 0 0 0 7.5px;
+}

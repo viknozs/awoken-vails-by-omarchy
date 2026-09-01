@@ -1,0 +1,43 @@
+accent = "#4F2683"
+cursor = "#FFC62F"
+foreground = "#f8f8f2"
+background = "#140824"
+selection_foreground = "#140824"
+selection_background = "#FFC62F"
+
+
+# Theme: awøken⸸vails
+#         øggtíøns▽mnlth43
+
+
+# Schwarz / Dunkelgrau
+color0 = "#140824"
+color8 = "#321556"
+
+# Rot / Bright Rot -> Vikings-Lila
+color1 = "#4F2683"
+color9 = "#6f3ba8"
+
+# Grün / Bright Grün -> Giftiges Moosgrün (In-Flames-Vibe)
+color2 = "#2ed07e"
+color10 = "#53ea9d"
+
+# Gelb / Bright Gelb -> Dein Vikings-Gold
+color3 = "#FFC62F"
+color11 = "#ffd359"
+
+# Blau / Bright Blau -> Tiefes Nachtblau
+color4 = "#2c529d"
+color12 = "#4b73ca"
+
+# Magenta / Bright Magenta -> Helles Gothic-Violett
+color5 = "#894ba0"
+color13 = "#bc7fd3"
+
+# Cyan / Bright Cyan -> Kühles Eisblau
+color6 = "#2fa4ff"
+color14 = "#6ec0ff"
+
+# Weiß / Hellgrau
+color7 = "#a29bb0"
+color15 = "#f8f8f2"

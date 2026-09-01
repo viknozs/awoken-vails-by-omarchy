@@ -1,0 +1,8 @@
+{
+    "clock": {
+        "exec": "~/.config/waybar/clock.sh",
+        "interval": 60,
+        "format": "{}",
+        "tooltip": false
+    }
+}

@@ -1,0 +1,18 @@
+[general]
+bars = 24
+bar_spacing = 1
+framerate = 30
+sensitivity = 100
+
+[input]
+method = pulse
+source = alsa_output.usb-BurrBrown_from_Texas_Instruments_USB_AUDIO_CODEC-00.analog-stereo.monitor
+
+[output]
+method = raw
+raw_target = /dev/stdout
+data_format = ascii
+ascii_max_range = 9
+
+[string]
+bar_characters = " 13579"

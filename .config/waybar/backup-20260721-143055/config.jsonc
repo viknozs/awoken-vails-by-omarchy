@@ -1,0 +1,143 @@
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "bottom",
+  "spacing": 0,
+  "height": 26,
+
+  // 1. MODULE-AUFTEILUNG (Vollständig neu sortiert)
+  "modules-left": [
+    "custom/awoken",                   // Ganz links außen vor der Uhr
+    "clock#fuzzy"                      // Die Uhr in Worten direkt danach
+  ],
+  "modules-center": [
+    "pulseaudio",                      // Tonsymbol links vom Menü
+    "custom/update",                   // Update-Icon direkt links neben dem Menü
+    "custom/omarchy",                  // Das Oggtions-Menü EXAKT in der Mitte
+    "group/tray-expander",             // Die System-Icons direkt RECHTS neben dem Menü ab hier:
+    "network",               
+    "bluetooth",
+    "cpu",
+    "battery"
+  ],
+  "modules-right": [
+    "hyprland/workspaces"              // Die Workspaces wandern ganz nach rechts außen
+  ],
+
+  // 2. TEXT-MODULE & UHR
+  "custom/awoken": {
+    "format": "awøken⸸vails",
+    "tooltip": false
+  },
+   "clock": {
+    "format": "{:L%A %H:%M}",
+    "format-alt": "{:L%d %B W%V %Y}",
+    "tooltip": false,
+  },
+
+  // 3. WORKSPACES (Ohne das störende "active"-Dreieck)
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    },
+    "format-icons": {
+      "1": "sub43",
+      "2": "doge",
+      "3": "butler",
+      "4": "vøid",
+      "5": "Ogger"                     // Kein "active"-Eintrag mehr, rein über CSS gelöst
+    }
+  },
+
+  // 4. OMARCHY & UPDATE (Tool-Auge + Dreieck 󰭎 ▽)
+  "custom/omarchy": {
+    "format": "󰭎 ▽", 
+    "on-click": "omarchy-menu",
+    "on-click-right": "xdg-terminal-exec",
+    "tooltip-format": "Oggtions (The Great Turn)\n\nSuper + Alt + Space"
+  },
+  "custom/update": {
+    "format": "",
+    "exec": "omarchy-update-available",
+    "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-upgrade",
+    "tooltip-format": "Omarchy update available",
+    "signal": 7,
+    "interval": 21600
+  },
+
+  // 5. AUDIO & HARDWARE
+  "pulseaudio": {
+    "format": "{icon}",
+    "on-click": "omarchy-launch-audio", 
+    "on-click-right": "pamixer -t",
+    "tooltip-format": "Playing at {volume}%",
+    "scroll-step": 5,
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "headset": "",
+      "default": ["", "", ""]
+    }
+  },
+  "cpu": {
+    "interval": 5,
+    "format": "󰍛",
+    "on-click": "omarchy-launch-or-focus-tui btop",
+    "on-click-right": "alacritty"
+  },
+
+  // 6. SYSTEM-SYMBOLE & AKKU
+  "custom/battery": {
+    "exec": "cat /sys/class/power_supply/BAT1/capacity", // Falls BAT1 nicht existiert, nimm BAT0
+    "format": "󰁹 {}%",
+    "interval": 30,
+    "tooltip": false
+  },
+
+  "network": {
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰀂",
+    "format-disconnected": "󰤮",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)",
+    "tooltip-format-ethernet": "Connected",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "spacing": 1,
+    "on-click": "omarchy-launch-wifi"
+  },
+  "bluetooth": {
+    "format": "",
+    "format-off": "󰂲",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱",
+    "format-no-controller": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "omarchy-launch-bluetooth"
+  },
+
+  // TRAY
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "tray-group-item"
+    },
+    "modules": ["custom/expand-icon", "tray"]
+  },
+  "custom/expand-icon": {
+    "format": "",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 12,
+    "spacing": 17
+  }
+}
